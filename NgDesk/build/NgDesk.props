@@ -1,0 +1,12 @@
+﻿<Project>
+    <ItemGroup>
+        <EmbeddedResource Include="$(NgDist)\**">
+            <LogicalName>%(RelativeDir)%(EmbeddedResource.FileName)%(EmbeddedResource.Extension)</LogicalName>
+        </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+        <AssemblyAttribute Include="NgDesk.Implementation.NgDistAttribute">
+            <_Parameter1>$(NgDist)</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
+</Project>
