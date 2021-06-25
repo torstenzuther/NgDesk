@@ -12,6 +12,9 @@
         </Description>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/torstenzuther/NgDesk</RepositoryUrl>
+        <PackageProjectUrl>https://github.com/torstenzuther/NgDesk</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <Copyright>2021</Copyright>
     </PropertyGroup>
     
     <ItemGroup>
