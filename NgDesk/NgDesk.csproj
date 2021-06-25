@@ -3,6 +3,15 @@
     <PropertyGroup>
         <TargetFramework>net5.0-windows</TargetFramework>
         <Version>1.0.0</Version>
+        <Authors>Torsten Zuther</Authors>
+        <PackageId>NgDesk</PackageId>
+        <PackageTags>Angular; WebView; Desktop; Ng;</PackageTags>
+        <Description>
+            This package provides integration of your Angular App into WebView and allows to create Desktop Apps using
+            Angular and C#/.NET as backend. Both WinForms and WPF are supported.
+        </Description>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/torstenzuther/NgDesk</RepositoryUrl>
     </PropertyGroup>
     
     <ItemGroup>
