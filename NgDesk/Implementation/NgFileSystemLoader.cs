@@ -22,6 +22,7 @@ namespace NgDesk.Implementation
                         new HashSet<FilePath>(files)),
                         new PathCombinator()));
         }
+
         public byte[] Load(UriPath path)
         {
             return _uriResourceLoader.Load(path);
