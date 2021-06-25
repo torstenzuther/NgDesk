@@ -15,7 +15,7 @@ namespace NgDesk.Implementation
         public FilePath GetRoot()
         {
             return _assembly
-                .GetCustomAttribute<NgDistAttribute>()
+                .GetCustomAttribute<NgDeskAttribute>()
                 ?.Path;
         }
     }

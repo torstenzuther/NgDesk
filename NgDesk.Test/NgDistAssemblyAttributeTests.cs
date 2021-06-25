@@ -13,7 +13,7 @@ namespace NgDesk.Test
         {
             var attribute = Assembly
                 .GetExecutingAssembly()
-                .GetCustomAttribute<NgDistAttribute>();
+                .GetCustomAttribute<NgDeskAttribute>();
 
             attribute.Should().NotBeNull();
             attribute!.Path.Should().Be($"..{Path.DirectorySeparatorChar}{TestConstants.TestFolder}");

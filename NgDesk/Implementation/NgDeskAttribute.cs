@@ -3,9 +3,9 @@
 namespace NgDesk.Implementation
 {
     [AttributeUsage(AttributeTargets.Assembly)]
-    public class NgDistAttribute: Attribute
+    public class NgDeskAttribute: Attribute
     {
-        public NgDistAttribute(string path)
+        public NgDeskAttribute(string path)
         {
             Path = path;
         }

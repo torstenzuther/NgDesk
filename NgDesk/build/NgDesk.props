@@ -5,7 +5,7 @@
         </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
-        <AssemblyAttribute Include="NgDesk.Implementation.NgDistAttribute">
+        <AssemblyAttribute Include="NgDesk.Implementation.NgDeskAttribute">
             <_Parameter1>$(NgDist)</_Parameter1>
         </AssemblyAttribute>
     </ItemGroup>
