@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net5.0-windows</TargetFramework>
+        <UseWPF>true</UseWPF>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <!--<NgDist>..\NgApp\dist\NgApp</NgDist>-->
+        <NgDist>..\..\..\..\NgApp\dist\NgApp</NgDist>
+    </PropertyGroup>
+    
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Web.WebView2" Version="1.0.902-prerelease" />
+      <PackageReference Include="NgDesk" Version="1.0.0" />
+    </ItemGroup>
+    
+</Project>
