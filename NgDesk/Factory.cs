@@ -4,23 +4,23 @@ using NgDesk.Implementation;
 
 namespace NgDesk
 {
-    public static class Start
+    public static class Factory
     {
-        public static IServer ServeByFilePath(string defaultPath = "index.html")
+        public static IServer GetServerUsingFilePath(string defaultRoute = "index.html")
         {
             var assembly = Assembly.GetCallingAssembly();
             return new HttpListener(
                 new NgFileSystemLoader(
-                    defaultPath,
+                    defaultRoute,
                     new RootPathProvider(assembly)));
         }
         
-        public static IServer ServeByEmbeddedResources(string defaultPath = "index.html")
+        public static IServer GetServerUsingEmbeddedResources(string defaultRoute = "index.html")
         {
             var assembly = Assembly.GetCallingAssembly();
             return new HttpListener(
                 new NgUriResourceLoader(
-                    defaultPath,
+                    defaultRoute,
                     new RootPathProvider(assembly), assembly));
         }
     }
