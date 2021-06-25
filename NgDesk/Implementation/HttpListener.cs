@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using NgDesk.Contracts;
 
-namespace NgDesk
+namespace NgDesk.Implementation
 {
     public class HttpListener : IServer
     {

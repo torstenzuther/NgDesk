@@ -4,9 +4,9 @@ using NgDesk.Implementation;
 
 namespace NgDesk
 {
-    public static class Defaults
+    public static class Start
     {
-        public static IServer GetDefaultHttpListener(string defaultPath = "index.html")
+        public static IServer ServeByFilePath(string defaultPath = "index.html")
         {
             var assembly = Assembly.GetCallingAssembly();
             return new HttpListener(
@@ -15,7 +15,7 @@ namespace NgDesk
                     new RootPathProvider(assembly)));
         }
         
-        public static IServer GetResourceHttpListener(string defaultPath = "index.html")
+        public static IServer ServeByEmbeddedResources(string defaultPath = "index.html")
         {
             var assembly = Assembly.GetCallingAssembly();
             return new HttpListener(
