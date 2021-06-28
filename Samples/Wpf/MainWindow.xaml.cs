@@ -25,7 +25,6 @@ namespace Wpf
 
         private void WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
         {
-            Console.WriteLine(e.WebMessageAsJson);
             WebView.CoreWebView2.PostWebMessageAsString(e.WebMessageAsJson);
         }
     }
