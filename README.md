@@ -1,3 +1,5 @@
+[![Build + Test](https://github.com/torstenzuther/NgDesk/actions/workflows/dotnet.yml/badge.svg?branch=master)](https://github.com/torstenzuther/NgDesk/actions/workflows/dotnet.yml)
+
 # NgDesk
 NgDesk is a nuget package which serves your Angular App as a Desktop application using WebView2 (Winforms or WPF)
 
