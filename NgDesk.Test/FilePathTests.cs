@@ -12,11 +12,11 @@ namespace NgDesk.Test
         [InlineData(".")]
         [InlineData("..")]
         [InlineData("test\\")]
-        public void FilePath_Should_Be_Implicitly_Converted_To_String(FilePath given)
+        public void FilePath_Should_Be_Implicitly_Converted_To_String(string given)
         {
-            string filePath = given;
+            FilePath givenAsFilePath = given;
             
-            filePath.Should().BeEquivalentTo(given);
+            given.Should().BeEquivalentTo(givenAsFilePath);
         }
         
         [Theory]
@@ -39,11 +39,13 @@ namespace NgDesk.Test
         [InlineData(".", ".")]
         [InlineData("..", "..")]
         [InlineData("test\\", "test\\")]
-        public void FilePath_Should_Be_Implicitly_Converted_From_UriPath(UriPath given, FilePath expected)
+        public void FilePath_Should_Be_Implicitly_Converted_From_UriPath(string given, string expected)
         {
-            FilePath givenAsFilePath = given;
+            UriPath givenUriPath = given;
+            FilePath givenAsFilePath = givenUriPath;
+            FilePath expectedAsFilePath = expected;
             
-            givenAsFilePath.Should().BeEquivalentTo(expected);
+            givenAsFilePath.Should().BeEquivalentTo(expectedAsFilePath);
         }
     }
 }

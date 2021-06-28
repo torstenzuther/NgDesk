@@ -21,7 +21,7 @@ namespace NgDesk.Test
         [Theory]
         [InlineData("/test.txt")]
         [InlineData("/TestSubFolder/test.txt")]
-        public void NgUriResourceLoader_Load_Should_Return_Embedded_Resources(UriPath path)
+        public void NgUriResourceLoader_Load_Should_Return_Embedded_Resources(string path)
         {
             var byteContent = _uriResourceLoader.Load(path);
 
