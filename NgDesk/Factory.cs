@@ -12,7 +12,8 @@ namespace NgDesk
             return new HttpListener(
                 new NgFileSystemLoader(
                     defaultRoute,
-                    new RootPathProvider(assembly)));
+                    new RootPathProvider(assembly)),
+                new MimeTypesProvider());
         }
         
         public static IServer GetServerUsingEmbeddedResources(string defaultRoute = "index.html")
@@ -21,7 +22,8 @@ namespace NgDesk
             return new HttpListener(
                 new NgUriResourceLoader(
                     defaultRoute,
-                    new RootPathProvider(assembly), assembly));
+                    new RootPathProvider(assembly), assembly),
+                new MimeTypesProvider());
         }
     }
 }
