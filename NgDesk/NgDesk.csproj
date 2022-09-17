@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net5.0-windows</TargetFramework>
-        <Version>1.0.0</Version>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Version>2.0.0</Version>
         <Authors>Torsten Zuther</Authors>
         <PackageId>NgDesk</PackageId>
         <PackageTags>Angular; WebView; Desktop; Ng;</PackageTags>
@@ -14,7 +14,7 @@
         <RepositoryUrl>https://github.com/torstenzuther/NgDesk</RepositoryUrl>
         <PackageProjectUrl>https://github.com/torstenzuther/NgDesk</PackageProjectUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
-        <Copyright>2021</Copyright>
+        <Copyright>2022</Copyright>
     </PropertyGroup>
     
     <ItemGroup>
