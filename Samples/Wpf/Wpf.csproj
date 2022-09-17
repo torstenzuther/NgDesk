@@ -7,8 +7,8 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <!--<NgDist>..\NgApp\dist\NgApp</NgDist>-->
-        <NgDist>..\..\..\..\NgApp\dist\NgApp</NgDist>
+        <!--<NgDist>..\NgApp\dist</NgDist>-->
+        <NgDist>..\..\..\..\NgApp\dist</NgDist>
     </PropertyGroup>
     
     <ItemGroup>
