@@ -22,11 +22,11 @@ public class ResourceFilePathProvider : IFilePathProvider
             .Select(resourceName => Trim(resourceName, root));
     }
 
-    private FilePath Trim(string resourceName, FilePath prefix)
+    private static FilePath Trim(string resourceName, FilePath prefix)
     {
         resourceName = resourceName.Replace(prefix, "");
         return resourceName.StartsWith(Path.DirectorySeparatorChar)
-            ? resourceName.Substring(1)
+            ? resourceName[1..]
             : resourceName;
     }
 }

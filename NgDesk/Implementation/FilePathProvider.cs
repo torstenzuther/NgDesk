@@ -12,7 +12,7 @@ public class FilePathProvider : IFilePathProvider
         var files = Directory.GetFiles(path, "*", new EnumerationOptions
         {
             RecurseSubdirectories = true,
-            ReturnSpecialDirectories = false,
+            ReturnSpecialDirectories = false
         });
 
         var relativeFilePaths = files
