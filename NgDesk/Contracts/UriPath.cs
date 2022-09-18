@@ -1,24 +1,23 @@
 ﻿using System;
 
-namespace NgDesk.Contracts
+namespace NgDesk.Contracts;
+
+public readonly struct UriPath
 {
-    public readonly struct UriPath
+    private readonly string _path;
+
+    private UriPath(string path)
     {
-        private readonly string _path;
+        _path = path;
+    }
 
-        private UriPath(string path)
-        {
-            _path = path;
-        }
-
-        public static implicit operator UriPath(string path)
-        {
-            return new(path);
-        }
+    public static implicit operator UriPath(string path)
+    {
+        return new(path);
+    }
         
-        public static implicit operator String(UriPath path)
-        {
-            return path._path;
-        }
+    public static implicit operator String(UriPath path)
+    {
+        return path._path;
     }
 }

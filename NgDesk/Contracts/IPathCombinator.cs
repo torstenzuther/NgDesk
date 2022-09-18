@@ -1,7 +1,6 @@
-﻿namespace NgDesk.Contracts
+﻿namespace NgDesk.Contracts;
+
+public interface IPathCombinator
 {
-    public interface IPathCombinator
-    {
-        FilePath Combine(FilePath root, FilePath path);
-    }
+    FilePath Combine(FilePath root, FilePath path);
 }

@@ -6,34 +6,33 @@ using NgDesk.Contracts;
 using NgDesk.Implementation;
 using Xunit;
 
-namespace NgDesk.Test
+namespace NgDesk.Test;
+
+public class FilePathProviderTests
 {
-    public class FilePathProviderTests
+    private readonly FilePathProvider _filePathProvider;
+
+    public FilePathProviderTests()
     {
-        private readonly FilePathProvider _filePathProvider;
+        _filePathProvider = new FilePathProvider();
+    }
 
-        public FilePathProviderTests()
+    [Theory]
+    [InlineData("..", "..", "..", "..", TestConstants.TestFolder)]
+    public void FileLoader_Load_Should_Return_File_Content(params string[] pathSegments)
+    {
+        var expected = new[]
         {
-            _filePathProvider = new FilePathProvider();
-        }
+            "test.txt",
+            $"{TestConstants.TestSubFolder}{Path.DirectorySeparatorChar}test.txt"
+        }.OrderBy(file => file);
+        var filePath = string.Join(Path.DirectorySeparatorChar, pathSegments);
 
-        [Theory]
-        [InlineData("..", "..", "..", "..", TestConstants.TestFolder)]
-        public void FileLoader_Load_Should_Return_File_Content(params string[] pathSegments)
-        {
-            var expected = new[]
-            {
-                "test.txt",
-                $"{TestConstants.TestSubFolder}{Path.DirectorySeparatorChar}test.txt"
-            }.OrderBy(file => file);
-            var filePath = string.Join(Path.DirectorySeparatorChar, pathSegments);
+        var files = _filePathProvider.GetFiles(filePath)
+            .Select(file => (string)file)
+            .OrderBy(file => file)
+            .ToList();
 
-            var files = _filePathProvider.GetFiles(filePath)
-                .Select(file => (string)file)
-                .OrderBy(file => file)
-                .ToList();
-
-            files.Should().BeEquivalentTo(expected);
-        }
+        files.Should().BeEquivalentTo(expected);
     }
 }

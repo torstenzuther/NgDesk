@@ -1,31 +1,30 @@
 ﻿using System;
 using Microsoft.Web.WebView2.Core;
 
-namespace Wpf
+namespace Wpf;
+
+public partial class MainWindow
 {
-    public partial class MainWindow
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-            InitializeAsync();
-        }
+        InitializeComponent();
+        InitializeAsync();
+    }
 
-        async void InitializeAsync()
-        {
-            WebView.WebMessageReceived += WebMessageReceived;
-            WebView.CoreWebView2InitializationCompleted += WebViewOnCoreWebView2InitializationCompleted;
-            await WebView.EnsureCoreWebView2Async();
-        }
+    async void InitializeAsync()
+    {
+        WebView.WebMessageReceived += WebMessageReceived;
+        WebView.CoreWebView2InitializationCompleted += WebViewOnCoreWebView2InitializationCompleted;
+        await WebView.EnsureCoreWebView2Async();
+    }
 
-        private void WebViewOnCoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
-        {
-            WebView.CoreWebView2.OpenDevToolsWindow();
-        }
+    private void WebViewOnCoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+    {
+        WebView.CoreWebView2.OpenDevToolsWindow();
+    }
 
-        private void WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
-        {
-            WebView.CoreWebView2.PostWebMessageAsString(e.WebMessageAsJson);
-        }
+    private void WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+    {
+        WebView.CoreWebView2.PostWebMessageAsString(e.WebMessageAsJson);
     }
 }

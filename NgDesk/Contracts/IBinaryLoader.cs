@@ -1,7 +1,6 @@
-﻿namespace NgDesk.Contracts
+﻿namespace NgDesk.Contracts;
+
+public interface IBinaryLoader<in T>
 {
-    public interface IBinaryLoader<in T>
-    {
-        byte[] Load(T path);
-    }
+    byte[] Load(T path);
 }

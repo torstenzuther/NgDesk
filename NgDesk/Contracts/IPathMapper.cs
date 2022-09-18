@@ -1,7 +1,6 @@
-﻿namespace NgDesk.Contracts
+﻿namespace NgDesk.Contracts;
+
+public interface IPathMapper
 {
-    public interface IPathMapper
-    {
-        FilePath Map(FilePath path);
-    }
+    FilePath Map(FilePath path);
 }

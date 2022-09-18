@@ -5,18 +5,17 @@ using NgDesk.Contracts;
 using NgDesk.Implementation;
 using Xunit;
 
-namespace NgDesk.Test
+namespace NgDesk.Test;
+
+public class RootPathProviderTests
 {
-    public class RootPathProviderTests
+    [Fact]
+    public void RootPathProvider_Should_Return_RootPath_Configured_In_Csproj()
     {
-        [Fact]
-        public void RootPathProvider_Should_Return_RootPath_Configured_In_Csproj()
-        {
-            FilePath expected = $"..{Path.DirectorySeparatorChar}{TestConstants.TestFolder}";
+        FilePath expected = $"..{Path.DirectorySeparatorChar}{TestConstants.TestFolder}";
 
-            var rootPathProvider = new RootPathProvider(Assembly.GetExecutingAssembly());
+        var rootPathProvider = new RootPathProvider(Assembly.GetExecutingAssembly());
 
-            rootPathProvider.GetRoot().Should().Be(expected);
-        }
+        rootPathProvider.GetRoot().Should().Be(expected);
     }
 }

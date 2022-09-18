@@ -1,7 +1,6 @@
-﻿namespace NgDesk.Contracts
+﻿namespace NgDesk.Contracts;
+
+public interface IRootPathProvider
 {
-    public interface IRootPathProvider
-    {
-        FilePath GetRoot();
-    }
+    FilePath GetRoot();
 }

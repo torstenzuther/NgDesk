@@ -1,6 +1,5 @@
-﻿namespace NgDesk.Contracts
+﻿namespace NgDesk.Contracts;
+
+public interface IUriResourceLoader : IBinaryLoader<UriPath>
 {
-    public interface IUriResourceLoader : IBinaryLoader<UriPath>
-    {
-    }
 }

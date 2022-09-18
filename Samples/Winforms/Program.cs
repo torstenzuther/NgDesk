@@ -2,22 +2,21 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Winforms
+namespace Winforms;
+
+static class Program
 {
-    static class Program
+    [STAThread]
+    static void Main()
     {
-        [STAThread]
-        static void Main()
-        {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+        Application.SetHighDpiMode(HighDpiMode.SystemAware);
+        Application.EnableVisualStyles();
+        Application.SetCompatibleTextRenderingDefault(false);
 
-            var server = NgDesk.Factory.GetServerUsingFilePath();
-            Task.Factory.StartNew(
-                async () => await server.ServeAsync("http://localhost:4444/"));
+        var server = NgDesk.Factory.GetServerUsingFilePath();
+        Task.Factory.StartNew(
+            async () => await server.ServeAsync("http://localhost:4444/"));
 
-            Application.Run(new MainForm());
-        }
+        Application.Run(new MainForm());
     }
 }

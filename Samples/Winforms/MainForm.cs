@@ -1,31 +1,30 @@
 ﻿using System.Windows.Forms;
 using Microsoft.Web.WebView2.Core;
 
-namespace Winforms
+namespace Winforms;
+
+public partial class MainForm : Form
 {
-    public partial class MainForm : Form
+    public MainForm()
     {
-        public MainForm()
-        {
-            InitializeComponent();
-            InitializeAsync();
-        }
+        InitializeComponent();
+        InitializeAsync();
+    }
 
-        async void InitializeAsync()
-        {
-            webView.WebMessageReceived += WebMessageReceived;
-            webView.CoreWebView2InitializationCompleted += WebView_CoreWebView2InitializationCompleted; ;
-            await webView.EnsureCoreWebView2Async();
-        }
+    async void InitializeAsync()
+    {
+        webView.WebMessageReceived += WebMessageReceived;
+        webView.CoreWebView2InitializationCompleted += WebView_CoreWebView2InitializationCompleted; ;
+        await webView.EnsureCoreWebView2Async();
+    }
 
-        private void WebView_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
-        {
-            webView.CoreWebView2.OpenDevToolsWindow();
-        }
+    private void WebView_CoreWebView2InitializationCompleted(object sender, CoreWebView2InitializationCompletedEventArgs e)
+    {
+        webView.CoreWebView2.OpenDevToolsWindow();
+    }
 
-        private void WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
-        {
-            webView.CoreWebView2.PostWebMessageAsString(e.WebMessageAsJson);
-        }
+    private void WebMessageReceived(object sender, CoreWebView2WebMessageReceivedEventArgs e)
+    {
+        webView.CoreWebView2.PostWebMessageAsString(e.WebMessageAsJson);
     }
 }
